@@ -62,12 +62,12 @@ def search_users(args):
             matched = True
 
 
-    # sort results by priority
-    results.sort(key=lambda x: x[1])
-
     # if no users are found, return an error message
     if not results:
         return {'error': 'User not found'}
+
+    # sort results by priority
+    results.sort(key=lambda x: x[1])
 
     # return result as list of dictionaries
     return [dict(user) for user, priority in results]
